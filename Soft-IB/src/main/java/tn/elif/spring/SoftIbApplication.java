@@ -12,6 +12,10 @@ public class SoftIbApplication {
 		 System.out.printf("hi");
 		 System.out.printf("ichrak");
 
+		 System.out.printf("Test Younes");
+		 System.out.printf("Test Ahmed");
+
+
 	}
 
 }
