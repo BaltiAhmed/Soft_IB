@@ -12,9 +12,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
 
 @Entity
 @Table(name = "compte")
@@ -44,12 +46,16 @@ public class Compte implements Serializable {
 	
 	@ManyToOne
 	private Banque banque;
+	
+	@OneToOne(mappedBy="compte")
+	private Archive archive;
 
 	public Compte() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
+	
 	public Compte(Long rib, int pin, double balance, Type type, Etat etat, Date dateCreation) {
 		super();
 		this.rib = rib;
@@ -59,6 +65,7 @@ public class Compte implements Serializable {
 		this.etat = etat;
 		this.dateCreation = dateCreation;
 	}
+
 
 	public Long getId() {
 		return id;
@@ -116,10 +123,55 @@ public class Compte implements Serializable {
 		this.dateCreation = dateCreation;
 	}
 
+	public ClientMorale getClientMorale() {
+		return clientMorale;
+	}
+
+	public void setClientMorale(ClientMorale clientMorale) {
+		this.clientMorale = clientMorale;
+	}
+
+	public ClientPhysique getClientPhysique() {
+		return clientPhysique;
+	}
+
+	public void setClientPhysique(ClientPhysique clientPhysique) {
+		this.clientPhysique = clientPhysique;
+	}
+
+	public List<Transaction> getTransaction() {
+		return transaction;
+	}
+
+	public void setTransaction(List<Transaction> transaction) {
+		this.transaction = transaction;
+	}
+
+	public Banque getBanque() {
+		return banque;
+	}
+
+	public void setBanque(Banque banque) {
+		this.banque = banque;
+	}
+
+	public Archive getArchive() {
+		return archive;
+	}
+
+	public void setArchive(Archive archive) {
+		this.archive = archive;
+	}
+
 	@Override
 	public String toString() {
 		return "Compte [id=" + id + ", rib=" + rib + ", pin=" + pin + ", balance=" + balance + ", type=" + type
-				+ ", etat=" + etat + ", dateCreation=" + dateCreation + "]";
+				+ ", etat=" + etat + ", dateCreation=" + dateCreation + ", clientMorale=" + clientMorale
+				+ ", clientPhysique=" + clientPhysique + ", transaction=" + transaction + ", banque=" + banque
+				+ ", archive=" + archive + "]";
 	}
+	
+	
 
+	
 }

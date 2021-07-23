@@ -36,6 +36,9 @@ public class Transaction implements Serializable {
 	
 	@ManyToOne
 	private Compte compte;
+	
+	@ManyToOne
+	private Archive archive;
 
 	public Transaction() {
 		super();
@@ -43,7 +46,7 @@ public class Transaction implements Serializable {
 	}
 
 	public Transaction(TypeTransaction type, Date date, double balanceAvant, double balanceApres, int tansfertVers,
-			Compte compte) {
+			Compte compte, Archive archive) {
 		super();
 		this.type = type;
 		this.date = date;
@@ -51,6 +54,7 @@ public class Transaction implements Serializable {
 		this.balanceApres = balanceApres;
 		this.tansfertVers = tansfertVers;
 		this.compte = compte;
+		this.archive = archive;
 	}
 
 	public Long getId() {
@@ -109,11 +113,21 @@ public class Transaction implements Serializable {
 		this.compte = compte;
 	}
 
+	public Archive getArchive() {
+		return archive;
+	}
+
+	public void setArchive(Archive archive) {
+		this.archive = archive;
+	}
+
 	@Override
 	public String toString() {
 		return "Transaction [id=" + id + ", type=" + type + ", date=" + date + ", balanceAvant=" + balanceAvant
-				+ ", balanceApres=" + balanceApres + ", tansfertVers=" + tansfertVers + ", compte=" + compte + "]";
+				+ ", balanceApres=" + balanceApres + ", tansfertVers=" + tansfertVers + ", compte=" + compte
+				+ ", archive=" + archive + "]";
 	}
+
 	
 	
 	
