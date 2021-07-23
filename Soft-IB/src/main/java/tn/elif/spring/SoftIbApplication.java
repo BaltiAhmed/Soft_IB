@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@ComponentScan(basePackages={ "tn.elif.spring.controllers" + "tn.elif.spring.services"})
+@ComponentScan(basePackages={ "tn.elif.spring.controllers"})
 public class SoftIbApplication {
 
 
