@@ -3,6 +3,7 @@ package tn.elif.spring.Entitys;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -16,6 +17,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
@@ -36,18 +39,23 @@ public class Compte implements Serializable {
 	private Date dateCreation;
 
 	@ManyToOne
+	@JsonIgnore
 	private ClientMorale clientMorale;
 
 	@ManyToOne
+	@JsonIgnore
 	private ClientPhysique clientPhysique;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="compte")
+	@JsonIgnore
 	private List<Transaction> transaction;
 	
 	@ManyToOne
+	@JsonIgnore
 	private Banque banque;
 	
 	@OneToOne(mappedBy="compte")
+	@JsonIgnore
 	private Archive archive;
 
 	public Compte() {
@@ -127,8 +135,8 @@ public class Compte implements Serializable {
 		return clientMorale;
 	}
 
-	public void setClientMorale(ClientMorale clientMorale) {
-		this.clientMorale = clientMorale;
+	public void setClientMorale(ClientMorale clientM) {
+		this.clientMorale = clientM;
 	}
 
 	public ClientPhysique getClientPhysique() {
