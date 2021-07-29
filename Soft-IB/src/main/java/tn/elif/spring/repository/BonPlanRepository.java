@@ -5,10 +5,11 @@ import java.util.List;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import tn.elif.spring.Entitys.BonPlan;
 
-
+@Repository
 public interface BonPlanRepository extends CrudRepository<BonPlan, Long> {
 	
 	@Query("select SUM(b.prix) from BonPlan b where b.facture.id=:factureId")

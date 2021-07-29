@@ -3220,3 +3220,27 @@ Identify and stop the process that's listening on port 8081 or configure this ap
 2021-07-29 11:38:47.019  WARN 6396 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2021-07-29 11:38:47.487  INFO 6396 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
 2021-07-29 11:38:47.501  INFO 6396 --- [restartedMain] tn.elif.spring.SoftIbApplication         : Started SoftIbApplication in 6.856 seconds (JVM running for 7.575)
+2021-07-29 11:50:01.519  INFO 6396 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-07-29 11:50:01.523  INFO 6396 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-07-29 11:50:01.534  INFO 6396 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-07-29 11:50:01.727  INFO 6396 --- [restartedMain] tn.elif.spring.SoftIbApplication         : Starting SoftIbApplication using Java 1.8.0_05 on DESKTOP-PSIDEVL with PID 6396 (C:\Users\darra\git\soft-IB\Soft-IB\target\classes started by Ahmed in C:\Users\darra\git\soft-IB\Soft-IB)
+2021-07-29 11:50:01.727  INFO 6396 --- [restartedMain] tn.elif.spring.SoftIbApplication         : No active profile set, falling back to default profiles: default
+2021-07-29 11:50:01.986  INFO 6396 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-07-29 11:50:02.040  INFO 6396 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 8 JPA repository interfaces.
+2021-07-29 11:50:02.189  INFO 6396 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2021-07-29 11:50:02.190  INFO 6396 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-29 11:50:02.190  INFO 6396 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-29 11:50:02.294  INFO 6396 --- [restartedMain] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2021-07-29 11:50:02.294  INFO 6396 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 561 ms
+2021-07-29 11:50:02.344  INFO 6396 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-07-29 11:50:02.349  INFO 6396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2021-07-29 11:50:02.353  INFO 6396 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2021-07-29 11:50:02.354  INFO 6396 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2021-07-29 11:50:02.412  INFO 6396 --- [restartedMain] o.hibernate.id.enhanced.TableGenerator   : HHH000398: Explicit segment value for id generator [hibernate_sequences.sequence_name] suggested; using default [default]
+2021-07-29 11:50:03.269  INFO 6396 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-07-29 11:50:03.270  INFO 6396 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-07-29 11:50:03.281  INFO 6396 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-07-29 11:50:03.552  WARN 6396 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-07-29 11:50:03.674  INFO 6396 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/SpringMVC'
+2021-07-29 11:50:03.681  INFO 6396 --- [restartedMain] tn.elif.spring.SoftIbApplication         : Started SoftIbApplication in 1.994 seconds (JVM running for 683.741)
+2021-07-29 11:50:03.684  INFO 6396 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
