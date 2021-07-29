@@ -18,5 +18,8 @@ public interface ICompte {
 	List<Compte> getCompteByBanqueId(Long idBanque);
 	List<Compte> getCompteByClientMoraleId(Long clientId,Long idBanque);
 	List<Compte> getCompteByClientPhysiqueId(Long clientId,Long idBanque);
+	Compte FermerCompte(Long id);
+	Compte BloquerCompte(Long id);
+	
 
 }

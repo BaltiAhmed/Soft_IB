@@ -51,8 +51,14 @@ public class ClientPhysique extends User  implements Serializable {
 	@ManyToMany(cascade = CascadeType.ALL, mappedBy="clientPhysique")
 	private List<Intervention> intervention;
 	
-	@ManyToMany(cascade = CascadeType.ALL, mappedBy="clientPhysique")
-	private List<Credit> credit;
+	//@ManyToMany(cascade = CascadeType.ALL, mappedBy="clientPhysique")
+	//private List<Credit> credit;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="clientPhysique")
+	private List<Services> service;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="clientPhysique")
+	private List<BonPlan> bonPlan;
 
 	public ClientPhysique() {
 		super();

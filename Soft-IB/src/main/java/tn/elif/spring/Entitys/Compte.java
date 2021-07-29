@@ -50,6 +50,10 @@ public class Compte implements Serializable {
 	@JsonIgnore
 	private List<Transaction> transaction;
 	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="compte")
+	@JsonIgnore
+	private List<Facture> facture;
+	
 	@ManyToOne
 	@JsonIgnore
 	private Banque banque;

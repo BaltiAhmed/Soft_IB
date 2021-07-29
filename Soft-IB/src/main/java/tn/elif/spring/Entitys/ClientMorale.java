@@ -43,8 +43,14 @@ public class ClientMorale extends User  implements Serializable {
 	@ManyToMany(cascade = CascadeType.ALL, mappedBy="clientMorale")
 	private List<Intervention> intervention;
 	
-	@ManyToMany(cascade = CascadeType.ALL, mappedBy="clientMorale")
-	private List<Credit> credit;
+	//@ManyToMany(cascade = CascadeType.ALL, mappedBy="clientMorale")
+	//private List<Credit> credit;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="clientMorale")
+	private List<Services> service;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="clientMorale")
+	private List<BonPlan> banPlan;
 	
 	
 

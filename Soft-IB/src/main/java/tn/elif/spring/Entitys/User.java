@@ -14,13 +14,13 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "user")
-@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
-public class User implements Serializable {
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
+public abstract class User implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.TABLE)
 	@Column(name = "id")
 	protected Long id;
 

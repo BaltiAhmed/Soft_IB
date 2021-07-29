@@ -1,6 +1,7 @@
 package tn.elif.spring.Entitys;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,12 +10,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "BonPlan")
-public class BonPlan implements Serializable {
+@Table(name = "service")
+public class Services implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
@@ -29,6 +32,9 @@ public class BonPlan implements Serializable {
 	
 	private double prix;
 	
+	@Temporal(TemporalType.DATE)
+	private Date date;
+	
 	@ManyToOne
 	@JsonIgnore
 	private Facture facture;
@@ -36,22 +42,22 @@ public class BonPlan implements Serializable {
 	@ManyToOne
 	@JsonIgnore
 	private ClientMorale clientMorale;
-	
+
 	@ManyToOne
 	@JsonIgnore
 	private ClientPhysique clientPhysique;
 
-	public BonPlan() {
+	public Services() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public BonPlan(String nom, String description, double prix, Facture facture) {
+	public Services(String nom, String description, double prix, Date date) {
 		super();
 		this.nom = nom;
 		this.description = description;
 		this.prix = prix;
-		this.facture = facture;
+		this.date = date;
 	}
 
 	public Long getId() {
@@ -86,6 +92,14 @@ public class BonPlan implements Serializable {
 		this.prix = prix;
 	}
 
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
 	public Facture getFacture() {
 		return facture;
 	}
@@ -114,11 +128,10 @@ public class BonPlan implements Serializable {
 
 	@Override
 	public String toString() {
-		return "BonPlan [id=" + id + ", nom=" + nom + ", description=" + description + ", prix=" + prix + ", facture="
-				+ facture + "]";
+		return "Service [id=" + id + ", nom=" + nom + ", description=" + description + ", prix=" + prix + ", date="
+				+ date + ", facture=" + facture + "]";
 	}
-	
-	
+
 	
 	
 

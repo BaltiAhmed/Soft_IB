@@ -14,6 +14,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import ch.qos.logback.core.net.server.Client;
 
 @Entity
@@ -34,15 +36,23 @@ public class Facture implements Serializable {
 	private Date date;
 
 	@ManyToOne
+	@JsonIgnore
 	private ClientPhysique clientPhysique;
 
 	@ManyToOne
+	@JsonIgnore
 	private ClientMorale clientMorale;
+	
+	@ManyToOne
+	@JsonIgnore
+	private Compte compte;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "facture")
-	private List<Service> service;
+	@JsonIgnore
+	private List<Services> service;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "facture")
+	@JsonIgnore
 	private List<BonPlan> bonPlan;
 
 	public Facture() {
@@ -50,14 +60,16 @@ public class Facture implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Facture(String titre, double montant, Date date, ClientPhysique clientPhysique, ClientMorale clientMorale) {
+	
+
+	public Facture(String titre, double montant, Date date) {
 		super();
 		this.titre = titre;
 		this.montant = montant;
 		this.date = date;
-		this.clientPhysique = clientPhysique;
-		this.clientMorale = clientMorale;
 	}
+
+
 
 	public Long getId() {
 		return id;
@@ -105,6 +117,32 @@ public class Facture implements Serializable {
 
 	public void setClientMorale(ClientMorale clientMorale) {
 		this.clientMorale = clientMorale;
+	}
+	
+	
+
+	public Compte getCompte() {
+		return compte;
+	}
+
+	public void setCompte(Compte compte) {
+		this.compte = compte;
+	}
+
+	public List<Services> getService() {
+		return service;
+	}
+
+	public void setService(List<Services> service) {
+		this.service = service;
+	}
+
+	public List<BonPlan> getBonPlan() {
+		return bonPlan;
+	}
+
+	public void setBonPlan(List<BonPlan> bonPlan) {
+		this.bonPlan = bonPlan;
 	}
 
 	@Override
